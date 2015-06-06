@@ -17,6 +17,7 @@ Foi desenvolvido usando PHP, Codeigniter e MySQL.
 - Faça o download ou clone este repositório;
 - Carregue todos os arquivos para o servidor onde ficará hospedado ou em seu servidor local;
 - Crie uma base de dados e carregue o database.sql incluíudo, em seguida configure os dados da conexão no arquivo '/app/config/database.php';
+- Configure o idioma (Português ou Inglês) no editando o arquivo '/app/config/config.php';
 - Acesse o local de instalação pelo navegador, você deverá ver uma tela de login;
 - Use os dados para o primeiro login:
 
