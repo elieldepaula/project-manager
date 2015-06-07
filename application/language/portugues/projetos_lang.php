@@ -36,9 +36,17 @@ $lang['proj_participants']					= "Participantes";
 $lang['proj_open'] 							= "Aberto";
 $lang['proj_closed'] 						= "Fechado";
 $lang['proj_email'] 						= "E-mail";
+$lang['proj_message']						= "Mensagem";
 $lang['proj_pass'] 							= "Senha";
 $lang['proj_login'] 						= "Login";
 $lang['proj_logout'] 						= "Sair";
+$lang['proj_answers']						= "Respostas";
+$lang['proj_new_answer']					= "Nova resposta";
+$lang['proj_send_answer']					= "Enviar resposta";
+$lang['proj_back']							= "Voltar";
+$lang['proj_close_task']					= "Encerrar a tarefa";
+$lang['proj_follow_task']					= "Acompanhamento de tarefa";
+$lang['proj_msg_no_answers']				= "Nenhuma resposta até agora.";
 // Messages
 $lang['proj_msg_confirm_delete'] 			= "Você tem certeza? Esta ação não poderá ser desfeita.";
 $lang['proj_msg_login_failed'] 				= "Seu login falhou, tente novamente.";

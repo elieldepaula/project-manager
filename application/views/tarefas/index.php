@@ -23,7 +23,7 @@
             <?php foreach($query as $row) { ?>
                 <tr>
                     <td><?php echo $row->id; ?></td>
-                    <td><?php echo word_limiter(ascii_to_entities($row->descricao), 12); ?></td>
+                    <td><?php echo anchor('tarefas/follow/'.$row->id, word_limiter(ascii_to_entities($row->descricao), 12)); ?></td>
                     <td><?php echo mdate('%d/%m/%Y', strtotime($row->inicio)); ?></td>
                     <td><?php echo mdate('%d/%m/%Y', strtotime($row->fim)); ?></td>
                     <td><?php echo $status[$row->status]; ?></td>

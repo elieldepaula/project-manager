@@ -36,9 +36,18 @@ $lang['proj_participants']					= "Project participants";
 $lang['proj_open'] 							= "Open";
 $lang['proj_closed'] 						= "Closed";
 $lang['proj_email'] 						= "Email";
+$lang['proj_message']						= "Message";
 $lang['proj_pass'] 							= "Password";
 $lang['proj_login'] 						= "Login";
 $lang['proj_logout'] 						= "Logout";
+$lang['proj_answers']						= "Answers";
+$lang['proj_new_answer']					= "New answer";
+$lang['proj_send_answer']					= "Send answer";
+$lang['proj_back']							= "Back";
+$lang['proj_close_task']					= "Close task";
+$lang['proj_follow_task']					= "Fallow task";
+$lang['proj_msg_no_answers']				= "No answers to this task.";
+
 // Messages
 $lang['proj_msg_confirm_delete'] 			= "You can not undo this action, are you sure?.";
 $lang['proj_msg_login_failed'] 				= "Your login fail, try again.";

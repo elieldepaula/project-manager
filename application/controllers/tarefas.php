@@ -76,6 +76,42 @@ class tarefas extends CI_Controller
         }
     }
 
+    public function follow($tarefa_id = null)
+    {
+        $this->load->model('mensagem');
+        $this->form_validation->set_rules('mensagem',  $this->lang->line('proj_message'), 'required');
+        
+        if ($this->form_validation->run() == FALSE) {
+            
+            $mensagens = $this->mensagem->get_by_field('tarefa_id', $tarefa_id)->result();
+            $tarefa = $this->tarefa->get_by_id($tarefa_id)->row();
+
+            $status = array(
+                '1' => '<span class="label label-success">'.$this->lang->line('proj_open').'</span>', 
+                '0' => '<span class="label label-danger">'.$this->lang->line('proj_closed').'</span>'
+            );
+
+            $this->load->view('layout/header');
+            $this->load->view('tarefas/follow', array('tarefa'=>$tarefa, 'mensagens'=>$mensagens, 'status'=>$status));
+            $this->load->view('layout/footer');
+
+        } else {
+            $dados = array(
+                'tarefa_id' => $tarefa_id,
+                'usuario_id' => $this->login->get_userid(),
+                'mensagem' => $this->input->post('mensagem')
+            );
+            if($this->mensagem->save($dados))
+            {
+                $this->session->set_flashdata('msg', 'Resposta enviada com sucesso.');
+                redirect('tarefas/follow/'.$tarefa_id);
+            } else {
+                $this->session->set_flashdata('msg', 'Não foi possível enviar sua resposta.');
+                redirect('tarefas/follow/'.$tarefa_id);
+            }
+        }
+    }
+
     public function edit($tarefa_id = null)
     {
         

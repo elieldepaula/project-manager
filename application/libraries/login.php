@@ -69,4 +69,16 @@ class login {
 			return false;
 		}
 	}
+
+	public function get_userid()
+	{
+		return $this->session->userdata('id');
+	}
+
+	public function get_nome_by_login()
+	{
+		$this->db->where('id', $this->get_userid());
+		$user_data = $this->db->get('usuarios')->row();
+		return $user_data->nome;
+	}
 }
