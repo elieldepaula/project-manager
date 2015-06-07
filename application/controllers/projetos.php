@@ -31,8 +31,10 @@ class projetos extends CI_Controller
     {
         $this->form_validation->set_rules('titulo', $this->lang->line('proj_title'), 'required');
         if ($this->form_validation->run() == FALSE) {
+            $this->load->model('usuario');
+            $usuarios = $this->usuario->get_list()->result();
             $this->load->view('layout/header');
-            $this->load->view('projetos/add');
+            $this->load->view('projetos/add', array('usuarios' => $usuarios));
             $this->load->view('layout/footer');
         } else {
             $dados = array(

@@ -3,7 +3,9 @@
         <h3 class="panel-title"><strong><?= $this->lang->line('proj_projects'); ?></strong></h3>
     </div>
     <div class="panel-body">
-        <p><?= anchor('projetos/add', $this->lang->line('proj_new_project'), array('class'=>'btn btn-primary')); ?></p>
+        <p>
+            <?= anchor('projetos/add', $this->lang->line('proj_new_project'), array('class'=>'btn btn-primary')); ?>
+        </p>
     </div>
     <div class="table-responsive">
         <table class="table table-hover table-striped">

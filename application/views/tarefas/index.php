@@ -4,7 +4,9 @@
     </div>
     <div class="panel-body">
         <p class="well"><?php echo $projeto->descricao; ?></p>
-        <p><?= anchor('tarefas/add/' . $projeto_id, $this->lang->line('proj_new_task'), array('class'=>'btn btn-primary')); ?></p>
+        <p>
+            <?= anchor('tarefas/add/' . $projeto_id, $this->lang->line('proj_new_task'), array('class'=>'btn btn-primary')); ?>
+        </p>
     </div>
     <div class="table-responsive">
         <table class="table table-hover table-striped">
@@ -21,7 +23,7 @@
             <?php foreach($query as $row) { ?>
                 <tr>
                     <td><?php echo $row->id; ?></td>
-                    <td><?php echo $row->descricao; ?></td>
+                    <td><?php echo word_limiter(ascii_to_entities($row->descricao), 12); ?></td>
                     <td><?php echo mdate('%d/%m/%Y', strtotime($row->inicio)); ?></td>
                     <td><?php echo mdate('%d/%m/%Y', strtotime($row->fim)); ?></td>
                     <td><?php echo $status[$row->status]; ?></td>
