@@ -6,7 +6,7 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="btn-group" role="group">
-                    <?= anchor('projetos/add', $this->lang->line('proj_new_project'), array('class'=>'btn btn-primary')); ?>
+                    <?= anchor('projetos/add', '<i class="glyphicon glyphicon-plus"></i> '.$this->lang->line('proj_new_project'), array('class'=>'btn btn-primary')); ?>
                 </div>
             </div>
         </div>
@@ -32,7 +32,6 @@
                     <td><?php echo $status[$row->status]; ?></td>
                     <td>
                         <div class="btn-group">
-                            <?php //= anchor('projetos/close/'.$row->id, '<i class="glyphicon glyphicon-ok"></i>', array('class'=>'btn btn-primary')); ?>
                             <?= anchor('projetos/edit/'.$row->id, '<i class="glyphicon glyphicon-pencil"></i>', array('class'=>'btn btn-primary')); ?>
                             <?= anchor('projetos/del/'.$row->id, '<i class="glyphicon glyphicon-trash"></i>', array('class'=>'btn btn-primary', 'onclick'=>'return apagar();')); ?>
                         </div>

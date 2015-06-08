@@ -40,7 +40,6 @@
                     <td><?php echo $status[$row->status]; ?></td>
                     <td>
                         <div class="btn-group">
-                            <?php // anchor('tarefas/close/'.$row->projeto_id.'/'.$row->id, '<i class="glyphicon glyphicon-ok"></i>', array('class'=>'btn btn-primary')); ?>
                             <?= anchor('tarefas/edit/'.$row->id, '<i class="glyphicon glyphicon-pencil"></i>', array('class'=>'btn btn-primary')); ?>
                             <?= anchor('tarefas/del/'.$row->projeto_id.'/'.$row->id, '<i class="glyphicon glyphicon-trash"></i>', array('class'=>'btn btn-primary', 'onclick'=>'return apagar();')); ?>
                         </div>
