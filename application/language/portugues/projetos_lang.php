@@ -45,6 +45,7 @@ $lang['proj_new_answer']					= "Nova resposta";
 $lang['proj_send_answer']					= "Enviar resposta";
 $lang['proj_back']							= "Voltar";
 $lang['proj_close_task']					= "Encerrar a tarefa";
+$lang['proj_close_project']					= "Encerrar o projeto";
 $lang['proj_follow_task']					= "Acompanhamento de tarefa";
 $lang['proj_msg_no_answers']				= "Nenhuma resposta até agora.";
 // Messages

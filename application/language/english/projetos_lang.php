@@ -45,6 +45,7 @@ $lang['proj_new_answer']					= "New answer";
 $lang['proj_send_answer']					= "Send answer";
 $lang['proj_back']							= "Back";
 $lang['proj_close_task']					= "Close task";
+$lang['proj_close_project']					= "Close project";
 $lang['proj_follow_task']					= "Fallow task";
 $lang['proj_msg_no_answers']				= "No answers to this task.";
 

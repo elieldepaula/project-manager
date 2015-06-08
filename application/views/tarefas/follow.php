@@ -6,9 +6,8 @@
     	<div class="row">
     		<div class="col-md-12">
 		    	<div class="btn-group" role="group">
-					<?= anchor('tarefas/index/'.$tarefa->projeto_id, '<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span> '.$this->lang->line('proj_back'), array('class'=>'btn btn-success')); ?>
+					<?= anchor('tarefas/index/'.$tarefa->projeto_id, '<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span> '.$this->lang->line('proj_back'), array('class'=>'btn btn-primary')); ?>
 					<?= anchor('tarefas/close/'.$tarefa->projeto_id.'/'.$tarefa->id, '<span class="glyphicon glyphicon-ok-sign" aria-hidden="true"></span> '.$this->lang->line('proj_close_task'), array('class'=>'btn btn-danger')); ?>
-					<!-- <button type="button" class="btn btn-default">Right</button> -->
 		    	</div>
 		    </div>
     	</div>

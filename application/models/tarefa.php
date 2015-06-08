@@ -23,4 +23,11 @@ class tarefa extends MY_Model
         return $this->db->affected_rows();
     }
 
+    public function get_total_tarefa($projeto_id)
+    {
+        $this->db->where('projeto_id', $projeto_id);
+        $this->db->from($this->table_name);
+        return $this->db->count_all_results();
+    }
+
 }
