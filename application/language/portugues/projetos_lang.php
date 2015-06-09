@@ -51,7 +51,7 @@ $lang['proj_msg_no_answers']				= "Nenhuma resposta até agora.";
 // Messages
 $lang['proj_msg_confirm_delete'] 			= "Você tem certeza? Esta ação não poderá ser desfeita.";
 $lang['proj_msg_login_failed'] 				= "Seu login falhou, tente novamente.";
-$lang['proj_msg_login_alert'] 				= "Você precisa fazer o login para acessar esta área.";
+$lang['proj_msg_login_alert'] 				= "Faça o login para acessar esta área.";
 $lang['proj_msg_proj_add_success'] 			= "Projeto criado com sucesso.";
 $lang['proj_msg_proj_add_error'] 			= "Não foi possível criar o projeto.";
 $lang['proj_msg_proj_edit_success'] 		= "Projeto alterado com sucersso.";

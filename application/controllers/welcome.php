@@ -47,7 +47,7 @@ class welcome extends CI_Controller
 		$this->login->protect();
 		
 		$this->load->view('layout/header');
-        $this->load->view('welcome/dashboard');//, array('query' => $query, 'status' => $status));
+        $this->load->view('welcome/dashboard');
         $this->load->view('layout/footer');
 	}
 

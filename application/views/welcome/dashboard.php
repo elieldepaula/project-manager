@@ -7,7 +7,6 @@
             <div class="col-md-12">
                 <div class="btn-group" role="group">
                     Página inicial da dashboard...
-                    <p><?= $this->login->get_tipo_usuario(); ?></p>
                 </div>
             </div>
         </div>

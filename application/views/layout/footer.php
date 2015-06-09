@@ -6,7 +6,7 @@
     <div class="container">
         <div class="row">
             <div class="col-sm-12">
-                <p>&reg;<?php echo date('Y'); ?> Eliel de Paula.</p>
+                <p>&reg;<?php echo date('Y'); ?> <a href="http://elieldepaula.com.br" target="_blank">Eliel de Paula.</a></p>
             </div>
         </div>
     </div>

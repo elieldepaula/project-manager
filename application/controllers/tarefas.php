@@ -42,7 +42,7 @@ class tarefas extends CI_Controller
         if($projeto_id == null)redirect('tarefas');
         
         $this->load->model('usuario');
-        $usuarios = $this->usuario->get_list()->result();
+        $usuarios = $this->usuario->get_participantes($projeto_id)->result();
         
         $this->form_validation->set_rules('descricao', $this->lang->line('proj_description'), 'required');
         if ($this->form_validation->run() == FALSE) {
@@ -120,8 +120,8 @@ class tarefas extends CI_Controller
         if ($this->form_validation->run() == FALSE) {
 
             $this->load->model('usuario');
-            $usuarios = $this->usuario->get_list()->result();
             $tarefa = $this->tarefa->get_by_id($tarefa_id)->row();
+            $usuarios = $this->usuario->get_participantes($tarefa->projeto_id)->result();
 
             $this->load->view('layout/header');
             $this->load->view('tarefas/edit', array('tarefa'=>$tarefa, 'usuarios'=>$usuarios));
