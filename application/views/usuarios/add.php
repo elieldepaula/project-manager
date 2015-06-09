@@ -17,7 +17,14 @@
                 <div class="col-md-3">
                     <div class="form-group">
                         <label><?= $this->lang->line('proj_function'); ?></label>
-                        <input type="text" name="funcao" value="" class="form-control">
+                        <select class="form-control">
+                            <option>Administrador</option>
+                            <option>Gerente</option>
+                            <option>Designer</option>
+                            <option>Programador</option>
+                            <option>Cliente</option>
+                        </select>
+                        <!-- <input type="text" name="funcao" value="" class="form-control"> -->
                         <?=  form_error('funcao', '<p style="color:#900;">', '</p>'); ?>
                     </div>
                 </div>

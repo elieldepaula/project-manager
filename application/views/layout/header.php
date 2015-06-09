@@ -46,14 +46,20 @@
                 <div class="collapse navbar-collapse" id="navbar-ex-collapse">
                     <ul class="nav navbar-nav navbar-right">
                         <li>
-                            <?= anchor('', $this->lang->line('proj_projects')); ?>
+                            <?= anchor('dashboard', 'Dashboard'); ?>
                         </li>
                         <li>
-                            <?= anchor('projetos/add', $this->lang->line('proj_new_project')); ?>
+                            <?= anchor('projetos', $this->lang->line('proj_projects')); ?>
                         </li>
-                        <li>
-                            <?= anchor('usuarios', $this->lang->line('proj_users')); ?>
-                        </li>
+                        <?php if( $this->login->get_tipo_usuario() == 1){ ?>
+                            <li>
+                                <?= anchor('usuarios', $this->lang->line('proj_users')); ?>
+                            </li>
+                        <?php } else  { ?>
+                            <li>
+                                <?= anchor('perfil', 'Perfil'); ?>
+                            </li>
+                        <?php } ?>
                         <li>
                             <?= anchor('welcome/logout', $this->lang->line('proj_logout')); ?>
                         </li>

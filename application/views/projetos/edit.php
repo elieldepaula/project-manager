@@ -15,17 +15,37 @@
             <div class="row">
                 <div class="col-md-3">
                     <div class="form-group">
+                        <label><?= $this->lang->line('proj_leader'); ?></label>
+                        <select name="usuario_id" class="form-control">
+                            <?php foreach($usuarios as $row_user){ ?>
+                                <option value="<?= $row_user->id; ?>" <?php if($projeto->usuario_id == $row_user->id){ echo "SELECTED"; } ?>><?= $row_user->nome; ?></option>
+                            <?php } ?>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label><?= $this->lang->line('proj_participants'); ?></label>
+                        <select multiple name="participantes[]" class="form-control">
+                            <?php foreach($usuarios as $row_user){ ?>
+                                <option value="<?= $row_user->id; ?>" <?php if($this->utils->is_participant($projeto->id, $row_user->id)){ echo 'selected="selected"'; }; ?> ><?= $row_user->nome; ?></option>
+                            <?php } ?>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="form-group">
                         <label><?= $this->lang->line('proj_begin'); ?></label>
                         <input type="text" name="inincio" value="<?php echo mdate('%d/%m/%Y', strtotime($projeto->inincio)); ?>" class="form-control">
                     </div>
                 </div>
-                <div class="col-md-3">
+                <div class="col-md-2">
                     <div class="form-group">
                         <label><?= $this->lang->line('proj_end'); ?></label>
                         <input type="text" name="fim" value="<?php echo mdate('%d/%m/%Y', strtotime($projeto->fim)); ?>" class="form-control">
                     </div>
                 </div>
-                <div class="col-md-3">
+                <div class="col-md-2">
                     <div class="form-group">
                         <label><?= $this->lang->line('proj_status'); ?></label>
                         <select name="status" class="form-control">
@@ -39,9 +59,9 @@
                 <input type="submit" value="<?= $this->lang->line('proj_save_updates'); ?>" class="btn btn-primary">
                 <?= anchor('projetos', $this->lang->line('proj_cancel'), array('class'=>'btn btn-danger')); ?>
             </div>
-    </div>
-    <input type="hidden" name="MM_update" value="form1">
-    <input type="hidden" name="id" value="<?php echo $projeto->id; ?>">
-    </form>
+            <input type="hidden" name="MM_update" value="form1">
+            <input type="hidden" name="id" value="<?php echo $projeto->id; ?>">
+        </form>
+     </div>
 </div>
 </div>

@@ -57,7 +57,7 @@
 										<label class="control-label" for="senha"><?= $this->lang->line('proj_pass'); ?></label>
 										<input class="form-control" name="senha" required id="senha" type="password">
 									</div>
-									<button type="submit" class="btn btn-lg btn-block btn-primary"><?= $this->lang->line('proj_login'); ?></button>
+									<button type="submit" class="btn btn-lg btn-block btn-primary"><i class="glyphicon glyphicon-off"></i> <?= $this->lang->line('proj_login'); ?></button>
 							  </form>
 							</div>
 						</div>

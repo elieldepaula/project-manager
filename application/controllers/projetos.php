@@ -45,7 +45,16 @@ class projetos extends CI_Controller
                 'fim' => mdate('%Y-%d-%m', strtotime($this->input->post('fim'))),
                 'status' => $this->input->post('status')
             );
-            if($this->projeto->save($dados)) {
+            $projeto_id = $this->projeto->save($dados);
+            if($projeto_id) {
+                // Salva o relacionamento multiplo entre projeto e participantes.
+                $this->load->model('participante');
+                foreach($this->input->post('participantes') as $part_id){
+                    $dados = array();
+                    $dados['projetos_id'] = $projeto_id;
+                    $dados['usuarios_id'] = $part_id;
+                    $this->participante->save($dados);
+                }
                 $this->session->set_flashdata('msg', $this->lang->line('proj_msg_proj_add_success'));
                 redirect('projetos');
             } else {
@@ -59,11 +68,14 @@ class projetos extends CI_Controller
     {
         $this->form_validation->set_rules('titulo', $this->lang->line('proj_title'), 'required');
         if ($this->form_validation->run() == FALSE) {
-            
+
+            $this->load->model('usuario');
+
+            $usuarios = $this->usuario->get_list()->result();
             $projeto = $this->projeto->get_by_id($projeto_id)->row();
-            
+
             $this->load->view('layout/header');
-            $this->load->view('projetos/edit', array('projeto'=>$projeto));
+            $this->load->view('projetos/edit', array('projeto'=>$projeto, 'usuarios'=> $usuarios));
             $this->load->view('layout/footer');
             
         } else {
@@ -76,6 +88,17 @@ class projetos extends CI_Controller
                 'status' => $this->input->post('status')
             );
             if($this->projeto->update($projeto_id, $dados)) {
+
+                // Salva o relacionamento multiplo entre projeto e participantes.
+                $this->load->model('participante');
+                $this->participante->delete_by_projeto($projeto_id);
+                foreach($this->input->post('participantes') as $part_id){
+                    $dados = array();
+                    $dados['projetos_id'] = $projeto_id;
+                    $dados['usuarios_id'] = $part_id;
+                    $this->participante->save($dados);
+                }
+
                 $this->session->set_flashdata('msg', $this->lang->line('proj_msg_proj_edit_success'));
                 redirect('projetos');
             } else {
@@ -95,7 +118,9 @@ class projetos extends CI_Controller
                 // Apaga todas as tarefas do projeto.
                 $this->load->model('tarefa');
                 $this->tarefa->delete_by_projeto($projeto_id);
-                
+                // Apaga os participantes do projeto.
+                $this->load->model('participante');
+                $this->participante->delete_by_projeto($projeto_id);
                 $this->session->set_flashdata('msg', $this->lang->line('proj_msg_proj_del_success'));
                 redirect('projetos');
             } else {

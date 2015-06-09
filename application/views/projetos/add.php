@@ -16,17 +16,37 @@
             <div class="row">
                 <div class="col-md-3">
                     <div class="form-group">
+                        <label><?= $this->lang->line('proj_leader'); ?></label>
+                        <select name="usuario_id" class="form-control">
+                            <?php foreach($usuarios as $row_user){ ?>
+                                <option value="<?= $row_user->id; ?>"><?= $row_user->nome; ?></option>
+                            <?php } ?>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label><?= $this->lang->line('proj_participants'); ?></label>
+                        <select multiple name="participantes[]" class="form-control">
+                            <?php foreach($usuarios as $row_user){ ?>
+                                <option value="<?= $row_user->id; ?>"><?= $row_user->nome; ?></option>
+                            <?php } ?>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="form-group">
                         <label><?= $this->lang->line('proj_begin'); ?></label>
                         <input type="text" name="inincio" value="" size="32" class="form-control">
                     </div>
                 </div>
-                <div class="col-md-3">
+                <div class="col-md-2">
                     <div class="form-group">
                         <label><?= $this->lang->line('proj_end'); ?></label>
                         <input type="text" name="fim" value="" size="32" class="form-control">
                     </div>
                 </div>
-                <div class="col-md-3">
+                <div class="col-md-2">
                     <div class="form-group">
                         <div class="form-group">
                             <label><?= $this->lang->line('proj_status'); ?></label>

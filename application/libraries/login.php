@@ -78,7 +78,14 @@ class login {
 	public function get_nome_by_login()
 	{
 		$this->db->where('id', $this->get_userid());
-		$user_data = $this->db->get('usuarios')->row();
-		return $user_data->nome;
+		$query = $this->db->get('usuarios')->row();
+		return $query->nome;
+	}
+
+	public function get_tipo_usuario()
+	{
+		$this->db->where('id', $this->get_userid());
+		$query = $this->db->get('usuarios')->row();
+		return $query->tipo;
 	}
 }

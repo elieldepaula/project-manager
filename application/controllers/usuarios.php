@@ -10,14 +10,15 @@ class usuarios extends CI_Controller
         $this->load->model('usuario');
 
         $this->login->protect();
+
+        if ($this->login->get_tipo_usuario() != 1)
+            die('Precisa ser administrador para acessar esta área.');
         
     }
 
     public function index()
     {
-        
         $query = $this->usuario->get_list()->result();
-        
         $this->load->view('layout/header');
         $this->load->view('usuarios/index', array('query' => $query));
         $this->load->view('layout/footer');

@@ -25,7 +25,7 @@ class welcome extends CI_Controller
 			);
 
 			if($this->login->autentica($options)){
-				redirect('projetos');
+				redirect('dashboard');
 			} else {
 				redirect('welcome');
 			}
@@ -39,6 +39,16 @@ class welcome extends CI_Controller
 		} else {
 			redirect('projetos');
 		}
+	}
+
+	public function dashboard()
+	{
+
+		$this->login->protect();
+		
+		$this->load->view('layout/header');
+        $this->load->view('welcome/dashboard');//, array('query' => $query, 'status' => $status));
+        $this->load->view('layout/footer');
 	}
 
 }

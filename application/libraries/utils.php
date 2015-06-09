@@ -28,4 +28,19 @@ class utils
 		return $this->mensagem->get_total_mensagem($tarefa_id);
 	}
 
+	public function is_participant($projeto_id, $usuario_id)
+	{
+		$this->load->model('participante');
+
+		$this->db->where('projetos_id', $projeto_id);
+		$this->db->where('usuarios_id', $usuario_id);
+		$this->db->from('participantes');
+
+		if($this->db->count_all_results() >= 1){
+			return true;
+		} else {
+			return false;
+		}
+	}
+
 }

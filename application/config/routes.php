@@ -1,6 +1,7 @@
 <?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-$route['default_controller'] = "projetos";
+$route['default_controller'] = "welcome/dashboard";
+$route['dashboard'] = "welcome/dashboard";
 $route['404_override'] = '';
 
 
