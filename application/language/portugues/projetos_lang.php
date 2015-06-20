@@ -74,3 +74,5 @@ $lang['proj_msg_user_edit_success'] 		= "Usuário alterado com sucesso.";
 $lang['proj_msg_user_edit_error'] 			= "Não foi possível alterar o usuário.";
 $lang['proj_msg_user_del_success'] 			= "Usuário excluído com sucesso.";
 $lang['proj_msg_user_del_error'] 			= "Não foi possível excluir o usuário.";
+$lang['proj_msg_add_follow_success'] 		= "Resposta enviada com sucesso.";
+$lang['proj_msg_add_follow_error'] 			= "Não foi possível enviar sua resposta.";

@@ -62,8 +62,8 @@ class tarefas extends CI_Controller
                 'usuario_id' => $this->input->post('usuario_id'),
                 'projeto_id' => $this->input->post('projeto_id'),
                 'descricao' => $this->input->post('descricao'),
-                'inicio' => mdate('%Y-%d-%m', strtotime($this->input->post('inicio'))),
-                'fim' => mdate('%Y-%d-%m', strtotime($this->input->post('fim'))),
+                'inicio' => date_for_mysql($this->input->post('inicio')),
+                'fim' => date_for_mysql($this->input->post('fim')),
                 'status' => $this->input->post('status')
             );
             if($this->tarefa->save($dados)) {
@@ -103,10 +103,10 @@ class tarefas extends CI_Controller
             );
             if($this->mensagem->save($dados))
             {
-                $this->session->set_flashdata('msg', 'Resposta enviada com sucesso.');
+                $this->session->set_flashdata('msg', $this->lang->line('proj_msg_add_follow_success'));
                 redirect('tarefas/follow/'.$tarefa_id);
             } else {
-                $this->session->set_flashdata('msg', 'Não foi possível enviar sua resposta.');
+                $this->session->set_flashdata('msg', $this->lang->line('proj_msg_add_follow_error'));
                 redirect('tarefas/follow/'.$tarefa_id);
             }
         }
@@ -131,8 +131,8 @@ class tarefas extends CI_Controller
             $dados = array(
                 'usuario_id' => $this->input->post('usuario_id'),
                 'descricao' => $this->input->post('descricao'),
-                'inicio' => mdate('%Y-%d-%m', strtotime($this->input->post('inicio'))),
-                'fim' => mdate('%Y-%d-%m', strtotime($this->input->post('fim'))),
+                'inicio' => date_for_mysql($this->input->post('inicio')),
+                'fim' => date_for_mysql($this->input->post('fim')),
                 'status' => $this->input->post('status')
             );
             if($this->tarefa->update($tarefa_id, $dados)) {

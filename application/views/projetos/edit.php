@@ -16,13 +16,13 @@
                 <div class="col-md-3">
                     <div class="form-group">
                         <label><?= $this->lang->line('proj_begin'); ?></label>
-                        <input type="text" name="inincio" value="<?php echo mdate('%d/%m/%Y', strtotime($projeto->inincio)); ?>" class="form-control">
+                        <input type="text" name="inincio" value="<?php echo date_for_user($projeto->inincio); ?>" class="form-control">
                     </div>
                 </div>
                 <div class="col-md-3">
                     <div class="form-group">
                         <label><?= $this->lang->line('proj_end'); ?></label>
-                        <input type="text" name="fim" value="<?php echo mdate('%d/%m/%Y', strtotime($projeto->fim)); ?>" class="form-control">
+                        <input type="text" name="fim" value="<?php echo date_for_user($projeto->fim); ?>" class="form-control">
                     </div>
                 </div>
                 <div class="col-md-3">

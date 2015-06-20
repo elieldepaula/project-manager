@@ -75,3 +75,5 @@ $lang['proj_msg_user_edit_success'] 		= "User updated.";
 $lang['proj_msg_user_edit_error'] 			= "Error updating the user.";
 $lang['proj_msg_user_del_success'] 			= "User deleted.";
 $lang['proj_msg_user_del_error'] 			= "Error deleting the user.";
+$lang['proj_msg_add_follow_success'] 		= "Your answer was sent.";
+$lang['proj_msg_add_follow_error'] 			= "Error sending your answer.";

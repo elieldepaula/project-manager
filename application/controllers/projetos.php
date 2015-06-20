@@ -41,8 +41,8 @@ class projetos extends CI_Controller
                 'usuario_id' => $this->input->post('usuario_id'),
                 'titulo' => $this->input->post('titulo'),
                 'descricao' => $this->input->post('descricao'),
-                'inincio' => mdate('%Y-%d-%m', strtotime($this->input->post('inincio'))),
-                'fim' => mdate('%Y-%d-%m', strtotime($this->input->post('fim'))),
+                'inincio' => date_for_mysql($this->input->post('inincio')),
+                'fim' => date_for_mysql($this->input->post('fim')),
                 'status' => $this->input->post('status')
             );
             if($this->projeto->save($dados)) {
@@ -71,8 +71,8 @@ class projetos extends CI_Controller
                 'usuario_id' => $this->input->post('usuario_id'),
                 'titulo' => $this->input->post('titulo'),
                 'descricao' => $this->input->post('descricao'),
-                'inincio' => mdate('%Y-%d-%m', strtotime($this->input->post('inincio'))),
-                'fim' => mdate('%Y-%d-%m', strtotime($this->input->post('fim'))),
+                'inincio' => date_for_mysql($this->input->post('inincio')),
+                'fim' => date_for_mysql($this->input->post('fim')),
                 'status' => $this->input->post('status')
             );
             if($this->projeto->update($projeto_id, $dados)) {
