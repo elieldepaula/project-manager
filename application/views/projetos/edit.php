@@ -13,6 +13,16 @@
                 <textarea name="descricao" cols="50" rows="5" class="form-control"><?php echo $projeto->descricao; ?></textarea>
             </div>
             <div class="row">
+            <div class="col-md-3">
+                    <div class="form-group">
+                        <label><?= $this->lang->line('proj_leader'); ?></label>
+                        <select name="usuario_id" class="form-control">
+                        <?php foreach($usuario as $user){ ?>
+                            <option value="<?= $user->id; ?>" <?php if($projeto->usuario_id == $user->id){ echo "SELECTED"; } ?>><?= $user->nome; ?></option>
+                        <?php } ?>
+                        </select>
+                    </div>
+                </div>
                 <div class="col-md-3">
                     <div class="form-group">
                         <label><?= $this->lang->line('proj_begin'); ?></label>

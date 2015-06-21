@@ -24,7 +24,7 @@
                     <td><?php echo $row->funcao; ?></td>
                     <td><?php echo $row->email; ?></td>
                     <td>
-                        <div class="btn-group">
+                        <div class="btn-group btn-group-sm">
                             <?= anchor('usuarios/edit/'.$row->id, '<i class="glyphicon glyphicon-pencil"></i>', array('class'=>'btn btn-primary')) ; ?>
                             <?= anchor('usuarios/del/'.$row->id, '<i class="glyphicon glyphicon-trash"></i>', array('class'=>'btn btn-primary', 'onclick'=>'return apagar();')) ; ?>
                         </div>

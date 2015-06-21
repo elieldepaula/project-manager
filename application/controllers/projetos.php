@@ -38,7 +38,7 @@ class projetos extends CI_Controller
             $this->load->view('layout/footer');
         } else {
             $dados = array(
-                'usuario_id' => $this->input->post('usuario_id'),
+                'usuario_id' => $this->login->get_userid(),
                 'titulo' => $this->input->post('titulo'),
                 'descricao' => $this->input->post('descricao'),
                 'inincio' => date_for_mysql($this->input->post('inincio')),
@@ -60,10 +60,12 @@ class projetos extends CI_Controller
         $this->form_validation->set_rules('titulo', $this->lang->line('proj_title'), 'required');
         if ($this->form_validation->run() == FALSE) {
             
+            $this->load->model('usuario');
+            $usuario = $this->usuario->get_list()->result();
             $projeto = $this->projeto->get_by_id($projeto_id)->row();
             
             $this->load->view('layout/header');
-            $this->load->view('projetos/edit', array('projeto'=>$projeto));
+            $this->load->view('projetos/edit', array('projeto'=>$projeto, 'usuario'=>$usuario));
             $this->load->view('layout/footer');
             
         } else {

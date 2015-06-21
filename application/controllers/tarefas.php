@@ -152,6 +152,11 @@ class tarefas extends CI_Controller
             redirect('projetos');
         } else {
             if($this->tarefa->delete($tarefa_id)) {
+
+                // Apaga todas as mensagens da tarefa.
+                $this->load->model('mensagem');
+                $this->mensagem->delete_by_tarefa($tarefa_id);
+
                 $this->session->set_flashdata('msg', $this->lang->line('proj_msg_task_del_success'));
                 redirect('tarefas/index/'.$projeto_id);
             } else {

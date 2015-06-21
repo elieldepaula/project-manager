@@ -13,4 +13,11 @@ class mensagem extends MY_Model
         return $this->db->count_all_results();
     }
 
+    public function delete_by_tarefa($tarefa_id)
+    {
+        $this->db->where('tarefa_id', $tarefa_id);
+        $this->db->delete($this->table_name);
+        return $this->db->affected_rows();
+    }
+
 }
