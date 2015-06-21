@@ -121,6 +121,7 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
   `funcao` varchar(40) CHARACTER SET latin1 NOT NULL,
   `email` varchar(120) CHARACTER SET latin1 NOT NULL,
   `senha` varchar(120) CHARACTER SET latin1 NOT NULL,
+  `admin` tinyint(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
 
@@ -129,7 +130,7 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
 --
 
 INSERT INTO `usuarios` (`id`, `nome`, `funcao`, `email`, `senha`) VALUES
-(1, 'Administrador', 'Gerente', 'admin@admin', '21232f297a57a5a743894a0e4a801fc3');
+(1, 'Administrador', 'Gerente', 'admin@admin', '21232f297a57a5a743894a0e4a801fc3', 1);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
