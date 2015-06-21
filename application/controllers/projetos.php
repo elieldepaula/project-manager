@@ -16,7 +16,8 @@ class projetos extends CI_Controller
     public function index()
     {
 
-        $query = $this->projeto->get_list()->result();
+        // $query = $this->projeto->get_list()->result();
+        $query = $this->projeto->get_by_field('usuario_id', $this->login->get_userid())->result();
         $status = array(
             '1' => '<span class="label label-success">'.$this->lang->line('proj_open').'</span>', 
             '0' => '<span class="label label-danger">'.$this->lang->line('proj_closed').'</span>'

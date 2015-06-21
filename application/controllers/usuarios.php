@@ -10,17 +10,28 @@ class usuarios extends CI_Controller
         $this->load->model('usuario');
 
         $this->login->protect();
+
+        // echo $this->login->get_userid();
         
     }
 
     public function index()
     {
+
+        if($this->login->is_admin() == false) {
+            redirect('');
+        }
         
         $query = $this->usuario->get_list()->result();
         
         $this->load->view('layout/header');
         $this->load->view('usuarios/index', array('query' => $query));
         $this->load->view('layout/footer');
+    }
+
+    public function perfil()
+    {
+        $this->edit($this->login->get_userid());
     }
     
     public function add()
@@ -52,9 +63,12 @@ class usuarios extends CI_Controller
 
     public function edit($usuario_id = null)
     {
-        
-        if($usuario_id == null)
-            redirect('usuarios');
+
+        if(!$this->login->is_admin()){
+
+            $usuario_id = $this->login->get_userid();
+
+        }
 
         $this->form_validation->set_rules('nome', $this->lang->line('proj_name'), 'required');
         $this->form_validation->set_rules('funcao', $this->lang->line('proj_function'), 'required');
@@ -82,16 +96,20 @@ class usuarios extends CI_Controller
             
             if($this->usuario->update($usuario_id, $dados)) {
                 $this->session->set_flashdata('msg', $this->lang->line('proj_msg_user_edit_success'));
-                redirect('usuarios');
+                redirect('perfil');
             } else {
                 $this->session->set_flashdata('msg', $this->lang->line('proj_msg_user_edit_error'));
-                redirect('usuarios');
+                redirect('perfil');
             }
         }
     }
 
     public function del($usuario_id = null)
     {
+
+        if(!$this->login->get_userid() == '1')
+            redirect('');
+        
         if($usuario_id == null) {
             $this->session->set_flashdata('msg', $this->lang->line('proj_msg_user_del_error'));
             redirect('usuarios');

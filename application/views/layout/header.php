@@ -52,7 +52,13 @@
                             <?= anchor('projetos/add', $this->lang->line('proj_new_project')); ?>
                         </li>
                         <li>
-                            <?= anchor('usuarios', $this->lang->line('proj_users')); ?>
+                            <?php
+                            if($this->login->is_admin()){
+                                echo anchor('usuarios', $this->lang->line('proj_users'));
+                            } else {
+                                echo anchor('usuarios/perfil', $this->lang->line('proj_profile'));
+                            }
+                            ?>
                         </li>
                         <li>
                             <?= anchor('welcome/logout', $this->lang->line('proj_logout')); ?>

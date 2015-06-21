@@ -9,6 +9,7 @@ $lang['proj_users'] 						= "Users";
 $lang['proj_new_user'] 						= "New user";
 $lang['proj_update_user'] 					= "Update user";
 $lang['proj_update_pass'] 					= "Update password";
+$lang['proj_profile'] 						= "My profile";
 // Projects
 $lang['proj_projects'] 						= "Projects";
 $lang['proj_new_project'] 					= "New project";

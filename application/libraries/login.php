@@ -38,6 +38,7 @@ class login {
 				$session_data = array(
 					'id' => $user_data->id,
 					'email' => $user_data->email,
+					'admin' => $user_data->admin,
 					'logged_in' => TRUE
 				);
 				$this->session->set_userdata($session_data);
@@ -60,10 +61,25 @@ class login {
 		$session_data = array(
 			'id' => null,
 			'email' => null,
+			'admin' => null,
 			'logged_in' => TRUE
 		);
 
 		if($this->session->unset_userdata($session_data)){
+			return true;
+		} else {
+			return false;
+		}
+	}
+
+	public function logged_in()
+	{
+		return $this->session->userdata('logged_in');
+	}
+
+	public function is_admin()
+	{
+		if($this->session->userdata('admin') == 1){
 			return true;
 		} else {
 			return false;

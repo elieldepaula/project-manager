@@ -1,6 +1,6 @@
 <div class="panel panel-default">
     <div class="panel-heading">
-        <h3 class="panel-title"><strong>Cadastro de usuários</strong></h3>
+        <h3 class="panel-title"><strong><?= $this->lang->line('proj_update_user'); ?></strong></h3>
     </div>
     <div class="panel-body">
         <form method="post" name="form1" action="<?= site_url('usuarios/edit/'.$usuario->id) ?>">
@@ -46,7 +46,13 @@
             </div>
             <div class="form-group">
                 <input type="submit" value="<?= $this->lang->line('proj_save_updates'); ?>" class="btn btn-primary">
-                <?= anchor('usuarios', $this->lang->line('proj_cancel'), array('class'=>'btn btn-danger')); ?>
+                <?php
+                if($this->login->is_admin()){
+                    echo anchor('usuarios', $this->lang->line('proj_cancel'), array('class'=>'btn btn-danger'));
+                } else {
+                    echo anchor('', $this->lang->line('proj_cancel'), array('class'=>'btn btn-danger'));
+                }
+                ?>
             </div>
             <input type="hidden" name="MM_insert" value="form1">
         </form>
