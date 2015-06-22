@@ -27,7 +27,7 @@
             <div class="container">
 				<div class="panel panel-default">
 					<div class="panel-heading">
-						<b><?= $this->lang->line('proj_login_form_title'); ?></b>
+						<b>Cadastro</b>
 					</div>
 					<div class="panel-body">
 						<?php
@@ -48,24 +48,30 @@
 		                ?>
 						<div class="row">
 							<div class="col-md-12">
-								<form action="<?= site_url('welcome'); ?>" method="POST" name="form_login" id="form_login" role="form">
+								<form action="<?= site_url('cadastro'); ?>" method="post" name="form_login" id="form_login" role="form">
+									<div class="form-group">
+										<label class="control-label" for="nome"><?= $this->lang->line('proj_name'); ?></label>
+										<input class="form-control" name="nome" required id="nome" type="text">
+										<?=  form_error('nome', '<p style="color:#900;">', '</p>'); ?>
+									</div>
+									<div class="form-group">
+										<label class="control-label" for="funcao"><?= $this->lang->line('proj_function'); ?></label>
+										<input class="form-control" name="funcao" required id="funcao" type="text">
+										<?=  form_error('funcao', '<p style="color:#900;">', '</p>'); ?>
+									</div>
 									<div class="form-group">
 										<label class="control-label" for="email"><?= $this->lang->line('proj_email'); ?></label>
 										<input class="form-control" name="email" required id="email" type="email">
+										<?=  form_error('email', '<p style="color:#900;">', '</p>'); ?>
 									</div>
 									<div class="form-group">
 										<label class="control-label" for="senha"><?= $this->lang->line('proj_pass'); ?></label>
 										<input class="form-control" name="senha" required id="senha" type="password">
+										<?=  form_error('senha', '<p style="color:#900;">', '</p>'); ?>
 									</div>
-									<button type="submit" class="btn btn-lg btn-block btn-primary"><?= $this->lang->line('proj_login'); ?></button>
-									
+									<button type="submit" class="btn btn-lg btn-block btn-primary">Enviar</button>
 							  </form>
 							</div>
-						</div>
-						<div class="col-md-12">
-							<p class="text-center">
-								<?= anchor('cadastro', 'Cadastro'); ?>
-							</p>
 						</div>
 					</div>
 				</div>

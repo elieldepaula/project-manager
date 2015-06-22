@@ -10,8 +10,6 @@ class usuarios extends CI_Controller
         $this->load->model('usuario');
 
         $this->login->protect();
-
-        // echo $this->login->get_userid();
         
     }
 
