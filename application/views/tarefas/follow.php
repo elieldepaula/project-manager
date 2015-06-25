@@ -1,8 +1,8 @@
 <ol class="breadcrumb">
-  <li><?= anchor('', 'Dashboard'); ?></li>
-  <li><?= anchor('projetos', 'Projetos'); ?></li>
-  <li><?= anchor('tarefas/index/' . $projeto->id, $projeto->titulo); ?></li>
-  <li><?= anchor('tarefas/follow/' . $tarefa->id, $tarefa->descricao); ?></li>
+    <li><?= anchor('', 'Dashboard'); ?></li>
+    <li><?= anchor('projetos', $this->lang->line('proj_projects')); ?></li>
+    <li><?= anchor('tarefas/index/' . $projeto->id, $projeto->titulo); ?></li>
+    <li><?= anchor('tarefas/follow/' . $tarefa->id, $tarefa->descricao); ?></li>
 </ol>
 
 <div class="panel panel-default">

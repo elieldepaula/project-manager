@@ -1,6 +1,6 @@
 <ol class="breadcrumb">
-  <li><?= anchor('', 'Dashboard'); ?></li>
-  <li><?= anchor('projetos', 'Projetos'); ?></li>
+    <li><?= anchor('', 'Dashboard'); ?></li>
+    <li><?= anchor('projetos', $this->lang->line('proj_projects')); ?></li>
 </ol>
 
 <div class="panel panel-default">
