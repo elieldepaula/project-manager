@@ -38,6 +38,7 @@
                         <label><?= $this->lang->line('proj_status'); ?></label>
                         <select name="status" class="form-control">
                             <option value="1" <?php if($tarefa->status == '1'){ echo "SELECTED"; } ?>><?= $this->lang->line('proj_open'); ?></option>
+                            <option value="2" <?php if($tarefa->status == '2'){ echo "SELECTED"; } ?>><?= $this->lang->line('proj_inprogress'); ?></option>
                             <option value="0" <?php if($tarefa->status == '0'){ echo "SELECTED"; } ?>><?= $this->lang->line('proj_closed'); ?></option>
                         </select>
                     </div>

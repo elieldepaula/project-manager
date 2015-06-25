@@ -3,6 +3,8 @@
 class projetos extends CI_Controller
 {
 
+    var $status = array();
+
     function __construct()
     {
         parent::__construct();
@@ -11,6 +13,12 @@ class projetos extends CI_Controller
 
         $this->login->protect();
 
+        $this->status = array(
+            '0' => '<span class="label label-danger">'.$this->lang->line('proj_closed').'</span>',
+            '1' => '<span class="label label-success">'.$this->lang->line('proj_open').'</span>', 
+            '2' => '<span class="label label-warning">'.$this->lang->line('proj_inprogress').'</span>',
+        );
+
     }
 
     public function index()
@@ -18,13 +26,9 @@ class projetos extends CI_Controller
 
         // $query = $this->projeto->get_list()->result();
         $query = $this->projeto->get_by_field('usuario_id', $this->login->get_userid())->result();
-        $status = array(
-            '1' => '<span class="label label-success">'.$this->lang->line('proj_open').'</span>', 
-            '0' => '<span class="label label-danger">'.$this->lang->line('proj_closed').'</span>'
-        );
 
         $this->load->view('layout/header');
-        $this->load->view('projetos/index', array('query' => $query, 'status' => $status));
+        $this->load->view('projetos/index', array('query' => $query, 'status' => $this->status));
         $this->load->view('layout/footer');
     }
 

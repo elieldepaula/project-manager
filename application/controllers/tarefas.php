@@ -3,6 +3,8 @@
 class tarefas extends CI_Controller
 {
 
+    var $status = array();
+
     function __construct()
     {
         parent::__construct();
@@ -10,6 +12,12 @@ class tarefas extends CI_Controller
         $this->load->model('tarefa');
 
         $this->login->protect();
+
+        $this->status = array(
+            '0' => '<span class="label label-danger">'.$this->lang->line('proj_closed').'</span>',
+            '1' => '<span class="label label-success">'.$this->lang->line('proj_open').'</span>', 
+            '2' => '<span class="label label-warning">'.$this->lang->line('proj_inprogress').'</span>',
+        );
         
     }
 
@@ -19,10 +27,6 @@ class tarefas extends CI_Controller
         $this->load->model('projeto');
         $projeto = $this->projeto->get_by_id($projeto_id)->row();
         $query = $this->tarefa->get_by_field('projeto_id', $projeto_id)->result();
-        $status = array(
-            '1' => '<span class="label label-success">'.$this->lang->line('proj_open').'</span>', 
-            '0' => '<span class="label label-danger">'.$this->lang->line('proj_closed').'</span>'
-        );
         
         $this->load->view('layout/header');
         $this->load->view(
@@ -31,7 +35,7 @@ class tarefas extends CI_Controller
                     'projeto_id' => $projeto_id, 
                     'query' => $query, 
                     'projeto' => $projeto, 
-                    'status' => $status
+                    'status' => $this->status
                 )
             );
         $this->load->view('layout/footer');
@@ -83,23 +87,22 @@ class tarefas extends CI_Controller
         
         if ($this->form_validation->run() == FALSE) {
             
+            $this->load->model('projeto');
+
             $mensagens = $this->mensagem->get_by_field('tarefa_id', $tarefa_id)->result();
             $tarefa = $this->tarefa->get_by_id($tarefa_id)->row();
-
-            $status = array(
-                '1' => '<span class="label label-success">'.$this->lang->line('proj_open').'</span>', 
-                '0' => '<span class="label label-danger">'.$this->lang->line('proj_closed').'</span>'
-            );
+            $projeto = $this->projeto->get_by_id($tarefa->projeto_id)->row();
 
             $this->load->view('layout/header');
-            $this->load->view('tarefas/follow', array('tarefa'=>$tarefa, 'mensagens'=>$mensagens, 'status'=>$status));
+            $this->load->view('tarefas/follow', array('tarefa'=>$tarefa, 'projeto'=>$projeto, 'mensagens'=>$mensagens, 'status'=>$this->status));
             $this->load->view('layout/footer');
 
         } else {
             $dados = array(
                 'tarefa_id' => $tarefa_id,
                 'usuario_id' => $this->login->get_userid(),
-                'mensagem' => $this->input->post('mensagem')
+                'mensagem' => $this->input->post('mensagem'),
+                'data' => date('Y-m-d H:i:s')
             );
             if($this->mensagem->save($dados))
             {

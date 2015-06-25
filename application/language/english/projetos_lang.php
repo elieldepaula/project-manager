@@ -36,6 +36,7 @@ $lang['proj_leader']						= "Project leader";
 $lang['proj_participants']					= "Project participants";
 $lang['proj_open'] 							= "Open";
 $lang['proj_closed'] 						= "Closed";
+$lang['proj_inprogress'] 					= "In progress";
 $lang['proj_email'] 						= "Email";
 $lang['proj_message']						= "Message";
 $lang['proj_pass'] 							= "Password";

@@ -32,6 +32,7 @@
                             <label><?= $this->lang->line('proj_status'); ?></label>
                             <select name="status" class="form-control">
                                 <option value="1"><?= $this->lang->line('proj_open'); ?></option>
+                                <option value="2"><?= $this->lang->line('proj_inprogress'); ?></option>
                                 <option value="0"><?= $this->lang->line('proj_closed'); ?></option>
                             </select>
                         </div>

@@ -1,3 +1,10 @@
+<ol class="breadcrumb">
+  <li><?= anchor('', 'Dashboard'); ?></li>
+  <li><?= anchor('projetos', 'Projetos'); ?></li>
+  <li><?= anchor('tarefas/index/' . $projeto->id, $projeto->titulo); ?></li>
+  <li><?= anchor('tarefas/follow/' . $tarefa->id, $tarefa->descricao); ?></li>
+</ol>
+
 <div class="panel panel-default">
     <div class="panel-heading">
         <h3 class="panel-title"><strong><?= $this->lang->line('proj_follow_task'); ?></strong></h3>
@@ -31,6 +38,7 @@
 	        	<div class="media-body">
 	        		<h4 class="media-heading"><?= $this->login->get_nome_by_login(); ?></h4>
 	        		<p><?= $row_msg->mensagem; ?></p>
+                    <p><span class="label label-info"><?= datetime_for_user($row_msg->data); ?></span></p>
 	        		<!-- TODO: opção de excluir caso o logado seja o autor da resposta. -->
 	        	</div>
 	        </div>

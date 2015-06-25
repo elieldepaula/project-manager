@@ -1,3 +1,9 @@
+<ol class="breadcrumb">
+  <li><?= anchor('', 'Dashboard'); ?></li>
+  <li><?= anchor('projetos', 'Projetos'); ?></li>
+  <li><?= anchor('tarefas/index/' . $projeto->id, $projeto->titulo); ?></li>
+</ol>
+
 <div class="panel panel-default">
     <div class="panel-heading">
         <h3 class="panel-title"><strong><?= $this->lang->line('proj_tasksof'); ?> <?= $projeto->titulo; ?></strong></h3>
@@ -18,7 +24,7 @@
             <p>
                 <?php 
                 echo '<span class="label label-default">'.date_for_user($projeto->inincio).' - '.date_for_user($projeto->fim).'</span> ';
-                echo $status[$projeto->status]; 
+                echo $status[$projeto->status];
                 ?>
             </p>
         </div>
@@ -38,7 +44,7 @@
             </thead>
             <?php foreach($query as $row) { ?>
                 <tr>
-                    <td><?php echo $row->id; ?></td>
+                    <td>#<?php echo $row->id; ?></td>
                     <td><?php echo anchor('tarefas/follow/'.$row->id, word_limiter(ascii_to_entities($row->descricao), 12)) . ' <span class="badge">' . $this->utils->get_total_respostas($row->id) . '</span>'; ?></td>
                     <td><?php echo mdate('%d/%m/%Y', strtotime($row->inicio)); ?></td>
                     <td><?php echo mdate('%d/%m/%Y', strtotime($row->fim)); ?></td>
