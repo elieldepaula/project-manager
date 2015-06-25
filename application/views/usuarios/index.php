@@ -1,3 +1,8 @@
+<ol class="breadcrumb">
+    <li><?= anchor('', 'Dashboard'); ?></li>
+    <li><?= anchor('usuarios', $this->lang->line('proj_users')); ?></li>
+</ol>
+
 <div class="panel panel-default">
     <div class="panel-heading">
         <h3 class="panel-title"><strong><?= $this->lang->line('proj_users'); ?></strong></h3>
