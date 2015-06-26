@@ -69,7 +69,7 @@
 										<input class="form-control" name="senha" required id="senha" type="password">
 										<?=  form_error('senha', '<p style="color:#900;">', '</p>'); ?>
 									</div>
-									<button type="submit" class="btn btn-lg btn-block btn-primary">Enviar</button>
+									<button type="submit" class="btn btn-lg btn-block btn-primary"><?= $this->lang->line('proj_send'); ?></button>
 							  </form>
 							</div>
 						</div>

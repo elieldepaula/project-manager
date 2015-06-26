@@ -64,7 +64,7 @@
 						</div>
 						<div class="col-md-12">
 							<p class="text-center">
-								<?= anchor('cadastro', 'Cadastro'); ?>
+								<?= anchor('cadastro', $this->lang->line('proj_signin')); ?>
 							</p>
 						</div>
 					</div>

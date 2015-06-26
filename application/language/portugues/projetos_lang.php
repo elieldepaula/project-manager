@@ -4,6 +4,7 @@
 $lang['proj_site_title'] 					= "Gerenciador de Projetos";
 $lang['proj_brand'] 						= "Gerenciador de Projetos";
 $lang['proj_login_form_title'] 				= "Login";
+$lang['proj_signin']						= "Cadastro";
 // Users
 $lang['proj_users'] 						= "Usuários";
 $lang['proj_new_user'] 						= "Novo usuário";
@@ -22,6 +23,7 @@ $lang['proj_new_task'] 						= "Nova tarefa";
 $lang['proj_update_task'] 					= "Alterar tarefa";
 // Fields
 $lang['proj_save'] 							= "Salvar";
+$lang['proj_send'] 							= "Enviar";
 $lang['proj_save_updates'] 					= "Salvar alterações";
 $lang['proj_cancel'] 						= "Cancelar";
 $lang['proj_id'] 							= "Id";

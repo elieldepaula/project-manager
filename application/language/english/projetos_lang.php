@@ -4,6 +4,7 @@
 $lang['proj_site_title'] 					= "My Project Manager";
 $lang['proj_brand'] 						= "My Program Manager";
 $lang['proj_login_form_title'] 				= "Login";
+$lang['proj_signin']						= "Sign in";
 // Users
 $lang['proj_users'] 						= "Users";
 $lang['proj_new_user'] 						= "New user";
@@ -22,6 +23,7 @@ $lang['proj_new_task'] 						= "New task";
 $lang['proj_update_task'] 					= "Update task";
 // Fields
 $lang['proj_save'] 							= "Save";
+$lang['proj_send'] 							= "Send";
 $lang['proj_save_updates'] 					= "Save updates";
 $lang['proj_cancel'] 						= "Cancel";
 $lang['proj_id'] 							= "Id";
