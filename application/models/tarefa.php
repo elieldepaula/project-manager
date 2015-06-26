@@ -23,6 +23,7 @@ class tarefa extends MY_Model
         $this->db->join('projetos', 'projetos.id = tarefas.projeto_id');
         $this->db->where('tarefas.status != ', '0');
         $this->db->where('tarefas.usuario_id', $usuario_id);
+        $this->db->order_by('fim', 'asc');
         
         return $this->db->get();
 
