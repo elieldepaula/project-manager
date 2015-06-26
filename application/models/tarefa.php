@@ -21,6 +21,7 @@ class tarefa extends MY_Model
         $this->db->select('tarefas.id as id, tarefas.descricao as descricao, tarefas.projeto_id, tarefas.status, tarefas.fim as fim, projetos.titulo as projeto');
         $this->db->from('tarefas');
         $this->db->join('projetos', 'projetos.id = tarefas.projeto_id');
+        $this->db->where('tarefas.status != ', '0');
         $this->db->where('tarefas.usuario_id', $usuario_id);
         
         return $this->db->get();
