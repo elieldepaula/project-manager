@@ -25,7 +25,7 @@ class projetos extends CI_Controller
     {
 
         // $query = $this->projeto->get_list()->result();
-        $query = $this->projeto->get_by_field('usuario_id', $this->login->get_userid())->result();
+        $query = $this->projeto->get_by_field('usuario_id', $this->login->get_userid(), array('field'=>'fim', 'order'=>'asc'))->result();
 
         $this->load->view('layout/header');
         $this->load->view('projetos/index', array('query' => $query, 'status' => $this->status));

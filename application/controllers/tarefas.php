@@ -26,7 +26,7 @@ class tarefas extends CI_Controller
         if($projeto_id == null)redirect('projetos');
         $this->load->model('projeto');
         $projeto = $this->projeto->get_by_id($projeto_id)->row();
-        $query = $this->tarefa->get_by_field('projeto_id', $projeto_id)->result();
+        $query = $this->tarefa->get_by_field('projeto_id', $projeto_id, array('field'=>'fim', 'order'=>'asc'))->result();
         
         $this->load->view('layout/header');
         $this->load->view(
