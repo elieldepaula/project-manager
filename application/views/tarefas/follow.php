@@ -19,6 +19,7 @@
 		    </div>
     	</div>
         <div class="well well-sm" style="margin-top:15px;">
+            <p><b>#<?= $tarefa->id; ?></b></p>
             <p><?= $tarefa->descricao; ?></p>
             <p><?= $status[$tarefa->status]; ?></p>
         </div>

@@ -48,7 +48,7 @@
 		                ?>
 						<div class="row">
 							<div class="col-md-12">
-								<form action="<?= site_url('welcome'); ?>" method="POST" name="form_login" id="form_login" role="form">
+								<form action="<?= site_url('login'); ?>" method="POST" name="form_login" id="form_login" role="form">
 									<div class="form-group">
 										<label class="control-label" for="email"><?= $this->lang->line('proj_email'); ?></label>
 										<input class="form-control" name="email" required id="email" type="email">

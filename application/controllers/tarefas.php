@@ -43,6 +43,11 @@ class tarefas extends CI_Controller
 
     public function add($projeto_id = null)
     {
+
+        if($this->login->is_admin() == false) {
+            redirect('');
+        }
+
         if($projeto_id == null)redirect('tarefas');
         
         $this->load->model('usuario');
@@ -117,6 +122,10 @@ class tarefas extends CI_Controller
 
     public function edit($tarefa_id = null)
     {
+
+        if($this->login->is_admin() == false) {
+            redirect('');
+        }
         
         $this->form_validation->set_rules('descricao',  $this->lang->line('proj_description'), 'required');
         
@@ -150,6 +159,11 @@ class tarefas extends CI_Controller
 
     public function del($projeto_id = null, $tarefa_id = null)
     {
+
+        if($this->login->is_admin() == false) {
+            redirect('');
+        }
+        
         if($tarefa_id == null) {
             $this->session->set_flashdata('msg', $this->lang->line('proj_msg_task_del_error'));
             redirect('projetos');

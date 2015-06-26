@@ -46,11 +46,16 @@
                 <div class="collapse navbar-collapse" id="navbar-ex-collapse">
                     <ul class="nav navbar-nav navbar-right">
                         <li>
-                            <?= anchor('', $this->lang->line('proj_projects')); ?>
+                            <?= anchor('', 'Dashboard'); ?>
                         </li>
-                        <li>
-                            <?= anchor('projetos/add', $this->lang->line('proj_new_project')); ?>
-                        </li>
+                        <?php if($this->login->is_admin()){ ?>
+                            <li>
+                                <?= anchor('projetos', $this->lang->line('proj_projects')); ?>
+                            </li>
+                            <li>
+                                <?= anchor('projetos/add', $this->lang->line('proj_new_project')); ?>
+                            </li>
+                        <?php } ?>
                         <li>
                             <?php
                             if($this->login->is_admin()){

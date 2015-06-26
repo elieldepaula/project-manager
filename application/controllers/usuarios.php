@@ -94,10 +94,18 @@ class usuarios extends CI_Controller
             
             if($this->usuario->update($usuario_id, $dados)) {
                 $this->session->set_flashdata('msg', $this->lang->line('proj_msg_user_edit_success'));
-                redirect('perfil');
+                if($this->login->is_admin()){
+                    redirect('usuarios');
+                } else {
+                    redirect('perfil');
+                }
             } else {
                 $this->session->set_flashdata('msg', $this->lang->line('proj_msg_user_edit_error'));
-                redirect('perfil');
+                if($this->login->is_admin()){
+                    redirect('usuarios');
+                } else {
+                    redirect('perfil');
+                }
             }
         }
     }
@@ -105,8 +113,9 @@ class usuarios extends CI_Controller
     public function del($usuario_id = null)
     {
 
-        if(!$this->login->get_userid() == '1')
+        if($this->login->is_admin() == false) {
             redirect('');
+        }
         
         if($usuario_id == null) {
             $this->session->set_flashdata('msg', $this->lang->line('proj_msg_user_del_error'));

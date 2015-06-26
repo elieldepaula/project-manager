@@ -7,15 +7,17 @@
     <div class="panel-heading">
         <h3 class="panel-title"><strong><?= $this->lang->line('proj_projects'); ?></strong></h3>
     </div>
-    <div class="panel-body">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="btn-group btn-group-sm" role="group">
-                    <?= anchor('projetos/add', '<i class="glyphicon glyphicon-plus"></i> '.$this->lang->line('proj_new_project'), array('class'=>'btn btn-primary')); ?>
+    <?php if($this->login->is_admin()){ ?>
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="btn-group btn-group-sm" role="group">
+                        <?= anchor('projetos/add', '<i class="glyphicon glyphicon-plus"></i> '.$this->lang->line('proj_new_project'), array('class'=>'btn btn-primary')); ?>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+    <?php } ?>
     <div class="table-responsive">
         <table class="table table-hover table-striped">
             <thead>

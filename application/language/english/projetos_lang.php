@@ -11,11 +11,13 @@ $lang['proj_update_user'] 					= "Update user";
 $lang['proj_update_pass'] 					= "Update password";
 $lang['proj_profile'] 						= "My profile";
 // Projects
+$lang['proj_project'] 						= "Project";
 $lang['proj_projects'] 						= "Projects";
 $lang['proj_new_project'] 					= "New project";
 $lang['proj_update_project'] 				= "Update project";
 // Tasks
 $lang['proj_tasksof'] 						= "Tasks of";
+$lang['proj_yourtasks'] 					= "Your tasks";
 $lang['proj_new_task'] 						= "New task";
 $lang['proj_update_task'] 					= "Update task";
 // Fields

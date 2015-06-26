@@ -27,7 +27,7 @@ class login {
 		
 		if (!$user && !$pass) {
 			$this->session->set_flashdata('msg', $this->lang->line('proj_msg_login_failed'));
-			return redirect('welcome');
+			return redirect('login');
 		} else {
 
 			$this->db->where('email', $user);
@@ -53,7 +53,7 @@ class login {
 	public function protect() {
 		if ($this->session->userdata('logged_in') == false) {
 			$this->session->set_flashdata('msg', $this->lang->line('proj_msg_login_alert'));
-			redirect('welcome');
+			redirect('login');
 		}
 	}
 

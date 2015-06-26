@@ -13,6 +13,10 @@ class projetos extends CI_Controller
 
         $this->login->protect();
 
+        if($this->login->is_admin() == false) {
+            redirect('');
+        }
+
         $this->status = array(
             '0' => '<span class="label label-danger">'.$this->lang->line('proj_closed').'</span>',
             '1' => '<span class="label label-success">'.$this->lang->line('proj_open').'</span>', 
@@ -24,7 +28,6 @@ class projetos extends CI_Controller
     public function index()
     {
 
-        // $query = $this->projeto->get_list()->result();
         $query = $this->projeto->get_by_field('usuario_id', $this->login->get_userid(), array('field'=>'fim', 'order'=>'asc'))->result();
 
         $this->load->view('layout/header');
