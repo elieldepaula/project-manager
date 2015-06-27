@@ -7,7 +7,7 @@
             <input type="hidden" name="projeto_id" value="<?= $projeto_id; ?>" />
             <div class="form-group">
                 <label><?= $this->lang->line('proj_description'); ?></label>
-                <textarea name="descricao" cols="50" rows="5" class="form-control"></textarea>
+                <textarea name="descricao" id="editor" cols="50" rows="15" class="form-control"></textarea>
                 <?= form_error('descricao', '<p style="color:#900;">', '</p>'); ?>
             </div>
             <div class="row">

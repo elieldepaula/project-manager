@@ -11,7 +11,7 @@
             </div>
             <div class="form-group">
                 <label><?= $this->lang->line('proj_description'); ?></label>
-                <textarea name="descricao" cols="50" rows="5" class="form-control"></textarea>
+                <textarea name="descricao" id="editor" cols="50" rows="15" class="form-control"></textarea>
             </div>
             <div class="row">
                 <div class="col-md-3">

@@ -49,7 +49,7 @@
             <?php foreach($query as $row) { ?>
                 <tr>
                     <td>#<?php echo $row->id; ?></td>
-                    <td><?php echo anchor('tarefas/follow/'.$row->id, word_limiter(ascii_to_entities($row->descricao), 12)) . ' <span class="badge">' . $this->utils->get_total_respostas($row->id) . '</span>'; ?></td>
+                    <td><?php echo anchor('tarefas/follow/'.$row->id, word_limiter(ascii_to_entities(strip_tags($row->descricao)), 12)) . ' <span class="badge">' . $this->utils->get_total_respostas($row->id) . '</span>'; ?></td>
                     <td><?php echo mdate('%d/%m/%Y', strtotime($row->inicio)); ?></td>
                     <td><?php echo mdate('%d/%m/%Y', strtotime($row->fim)); ?></td>
                     <td><?php echo $status[$row->status]; ?></td>

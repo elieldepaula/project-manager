@@ -17,7 +17,7 @@
             <?php foreach($query as $row) { ?>
                 <tr>
                     <td <?php if(date('Y-m-d') >= $row->fim){ echo 'class="bg-warning"'; } ?>>#<?php echo $row->id; ?></td>
-                    <td <?php if(date('Y-m-d') >= $row->fim){ echo 'class="bg-warning"'; } ?>><?php echo anchor('tarefas/follow/'.$row->id, word_limiter(ascii_to_entities($row->descricao), 12)) . ' <span class="badge">' . $this->utils->get_total_respostas($row->id) . '</span>'; ?></td>
+                    <td <?php if(date('Y-m-d') >= $row->fim){ echo 'class="bg-warning"'; } ?>><?php echo anchor('tarefas/follow/'.$row->id, word_limiter(ascii_to_entities(strip_tags($row->descricao)), 12)) . ' <span class="badge">' . $this->utils->get_total_respostas($row->id) . '</span>'; ?></td>
                     <td <?php if(date('Y-m-d') >= $row->fim){ echo 'class="bg-warning"'; } ?>><?php echo $row->projeto; ?></td>
                     <td <?php if(date('Y-m-d') >= $row->fim){ echo 'class="bg-warning"'; } ?>><?php echo mdate('%d/%m/%Y', strtotime($row->fim)); ?></td>
                     <td <?php if(date('Y-m-d') >= $row->fim){ echo 'class="bg-warning"'; } ?>><?php echo $status[$row->status]; ?></td>
