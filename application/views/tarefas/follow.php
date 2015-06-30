@@ -2,7 +2,7 @@
     <li><?= anchor('', 'Dashboard'); ?></li>
     <li><?= anchor('projetos', $this->lang->line('proj_projects')); ?></li>
     <li><?= anchor('tarefas/index/' . $projeto->id, $projeto->titulo); ?></li>
-    <li><?= anchor('tarefas/follow/' . $tarefa->id, $tarefa->descricao); ?></li>
+    <li><?= anchor('tarefas/follow/' . $tarefa->id, word_limiter(ascii_to_entities(strip_tags($tarefa->descricao)), 10)); ?></li>
 </ol>
 
 <div class="panel panel-default">
@@ -21,7 +21,7 @@
         <div class="well well-sm" style="margin-top:15px;">
             <p><b>#<?= $tarefa->id; ?></b></p>
             <p><?= $tarefa->descricao; ?></p>
-            <p><?= $status[$tarefa->status]; ?></p>
+            <p><?= $status[$tarefa->status]; ?> <small><?= date_for_user($tarefa->inicio); ?> - <?= date_for_user($tarefa->fim); ?></small></p>
         </div>
         <div class="page-header">
         	<h3><?= $this->lang->line('proj_answers'); ?></h3>
