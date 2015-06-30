@@ -21,7 +21,7 @@
         <div class="well well-sm" style="margin-top:15px;">
             <p><b>#<?= $tarefa->id; ?></b></p>
             <p><?= $tarefa->descricao; ?></p>
-            <p><?= $status[$tarefa->status]; ?> <small><?= date_for_user($tarefa->inicio); ?> - <?= date_for_user($tarefa->fim); ?></small></p>
+            <p><span class="label label-default"><?= date_for_user($tarefa->inicio); ?> - <?= date_for_user($tarefa->fim); ?></span> <?= $status[$tarefa->status]; ?></p>
         </div>
         <div class="page-header">
         	<h3><?= $this->lang->line('proj_answers'); ?></h3>
