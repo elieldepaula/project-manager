@@ -19,7 +19,11 @@
 		    </div>
     	</div>
         <div class="well well-sm" style="margin-top:15px;">
-            <p><b>#<?= $tarefa->id; ?></b></p>
+            <p>
+                <span class="badge">
+                    <b>#<?= $tarefa->id; ?></b>
+                </span>
+            </p>
             <p><?= $tarefa->descricao; ?></p>
             <p><span class="label label-default"><?= date_for_user($tarefa->inicio); ?> - <?= date_for_user($tarefa->fim); ?></span> <?= $status[$tarefa->status]; ?></p>
         </div>
