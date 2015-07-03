@@ -5,7 +5,11 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <script type="text/javascript" src="<?= base_url('assets'); ?>/js/jquery.js"></script>
         <script type="text/javascript" src="<?= base_url('assets'); ?>/js/bootstrap.js"></script>
+        <script type="text/javascript" src="<?= base_url('assets'); ?>/js/jquery.maskedinput.min.js"></script>
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
+        <script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
         <link href="<?= base_url('assets'); ?>/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+       
         <link href="<?= base_url('assets'); ?>/css/bootstrap.css" rel="stylesheet" type="text/css">
         <title><?= $this->lang->line('proj_site_title'); ?></title>
         <style type="text/css">

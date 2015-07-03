@@ -24,13 +24,13 @@
                 <div class="col-md-3">
                     <div class="form-group">
                         <label><?= $this->lang->line('proj_begin'); ?></label>
-                        <input type="text" name="inicio" value="<?= date_for_user($tarefa->inicio); ?>" class="form-control">
+                        <input type="text" name="inicio" value="<?= date_for_user($tarefa->inicio); ?>" class="form-control data">
                     </div>
                 </div>
                 <div class="col-md-3">
                     <div class="form-group">
                         <label><?= $this->lang->line('proj_end'); ?></label>
-                        <input type="text" name="fim" value="<?= date_for_user($tarefa->fim); ?>" class="form-control">
+                        <input type="text" name="fim" value="<?= date_for_user($tarefa->fim); ?>" class="form-control data">
                     </div>
                 </div>
                 <div class="col-md-3">

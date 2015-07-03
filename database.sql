@@ -82,7 +82,7 @@ CREATE TABLE IF NOT EXISTS `projetos` (
 --
 
 INSERT INTO `projetos` (`id`, `usuario_id`, `titulo`, `descricao`, `inincio`, `fim`, `status`) VALUES
-(1, 0, 'Projeto de exemplo', 'Descrição do projeto de exemplo.', '2015-06-01', '2015-06-10', '1');
+(1, 1, 'Projeto de exemplo', 'Descrição do projeto de exemplo.', '2015-06-01', '2015-06-10', '1');
 
 -- --------------------------------------------------------
 
@@ -129,7 +129,7 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
 -- Fazendo dump de dados para tabela `usuarios`
 --
 
-INSERT INTO `usuarios` (`id`, `nome`, `funcao`, `email`, `senha`) VALUES
+INSERT INTO `usuarios` (`id`, `nome`, `funcao`, `email`, `senha`, `admin`) VALUES
 (1, 'Administrador', 'Gerente', 'admin@admin', '21232f297a57a5a743894a0e4a801fc3', 1);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

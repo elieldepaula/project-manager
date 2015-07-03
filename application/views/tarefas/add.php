@@ -24,13 +24,13 @@
                 <div class="col-md-3">
                     <div class="form-group">
                         <label><?= $this->lang->line('proj_begin'); ?></label>
-                        <input type="text" name="inicio" size="32" class="form-control">
+                        <input type="text" name="inicio" size="32" class="form-control data">
                     </div>
                 </div>
                 <div class="col-md-3">
                     <div class="form-group">
                         <label><?= $this->lang->line('proj_end'); ?></label>
-                        <input type="text" name="fim" size="32" class="form-control">
+                        <input type="text" name="fim" size="32" class="form-control data">
                     </div>
                 </div>
                 <div class="col-md-3">
